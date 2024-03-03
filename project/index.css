@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url("//hello.myfonts.net/count/3050e0");
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Jura', sans-serif;
 }
 
 /* any  */
-
+html { scroll-behavior: smooth; }
 @supports(overflow: clip) {
   body.device-mobile-optimized #site-root {
       overflow-x:clip;
@@ -132,10 +133,11 @@ body:not(.device-mobile-optimized) .mobile {
   --color_65: 199, 199, 199;
   --color_66: 255,255,255;
   --font_0: normal normal normal 60px/1.2em Play, sans-serif;
-  --font_1: normal normal normal 16px/1.4em Jura, sans-serif;
+  --font_1: normal normal normal 16px / 1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
   --font_2: bold bold bold 48px/1.4em Jura Bold 700, sans-serif;
   --font_3: normal normal normal 42px/1.4em futura-lt-w01-book, futura-lt-w05-book, sans-serif;
   --font_4: normal normal normal 32px/1.4em futura-lt-w01-book, futura-lt-w05-book, sans-serif;
+  --font_7: normal normal normal 24px / 1.4em futura-lt-w01-light, futura-lt-w05-light, sans-serif;
   --font_8:normal normal normal 16px/1.75em futura-lt-w01-light,futura-lt-w05-light,sans-serif;
   --site-width: 980px;
   --above-all-z-index: 100000;
@@ -175,6 +177,11 @@ ul {
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+#story, #top, #app-scroll {
+  scroll-behavior: smooth;
+  
 }
 
 table,td {
@@ -307,6 +314,13 @@ var {
   /* position: fixed !important; */
   top: 0;
 }
+
+:target:before {
+  content:"";
+  display:block;
+  height: 50px; /* fixed header height*/
+  margin: -20px 0 0; /* negative fixed header height */
+  }
 
 #PAGES-CONTAINER {
   top: 108.8px;
@@ -490,8 +504,9 @@ var {
   background-size: cover;
 }
 .story{
-	padding: 30px;
-	 background: linear-gradient(to bottom right,#b2b2de, #4847a1);
+	padding: 100px 30px;
+  background: linear-gradient(to bottom right,#b2b2de, #4847a1);
+  margin-bottom: -20px;
 }
 #info-02-12, #form-05, #app-02-24 {
   --rd: 4px 4px 4px 4px;
@@ -1083,6 +1098,14 @@ body.device-mobile-optimized{
   font: var(--fnt, var(--font_1));
 }
 
+.list-word:hover .link-fonts{
+  color: rgb(179,218,222);
+}
+
+.list-word[data-state~=selected] .link-fonts{
+  color: rgb(179,218,222);
+}
+
 /* Intro classes */
 
 .intro-02-linkElement, .intro-02-pic{
@@ -1149,26 +1172,6 @@ body.device-mobile-optimized{
   text-align: var(--inputAlign,"inherit");
 }
 
-.info-button, .form-button {
-  cursor: pointer !important;
-  border-radius: var(--corvid-border-radius, var(--rd, 0));
-  bottom: 0;
-  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: var(--trans1, border-color .4s ease 0s, background-color .4s ease 0s);
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: var(--label-align);
-  text-align: initial;
-  width: -moz-max-content;
-  width: max-content;
-  touch-action: manipulation;
-}
-
 .info-link, .form-link {
   color: black;
   font: var(--fnt, var(--font_5));
@@ -1176,13 +1179,6 @@ body.device-mobile-optimized{
   position: relative;
   transition: var(--trans2, color .4s ease 0s);
   white-space: nowrap;
-}
-
-.info-button{
-  background-color: ghostwhite;
-  border: solid black;
-  min-width: 100%;
-  border-width: 0.01em;
 }
 
 .form-link{
@@ -1376,7 +1372,7 @@ body.device-mobile-optimized{
   font: var(--font_1);
   color: rgb(var(--color_66));
   letter-spacing: 0em;
-  font-family: 'Jura', sans-serif;
+  font-family: 'DINNextLTPro-Light', sans-serif;
 }
 
 .font_2 {
@@ -1414,6 +1410,62 @@ body.device-mobile-optimized{
   letter-spacing: 0em;
   font-family: 'Futura LT ', sans-serif;
 }
+
+/* buttons */
+
+.info-button, .form-button {
+  cursor: pointer !important;
+  border-radius: var(--corvid-border-radius, var(--rd, 0));
+  bottom: 0;
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background-color .4s, color .4s;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: var(--label-align);
+  text-align: initial;
+  width: -moz-max-content;
+  width: max-content;
+  touch-action: manipulation;
+}
+
+.info-button{
+  background-color: ghostwhite;
+  border: solid black;
+  min-width: 100%;
+  border-width: 0.01em;
+}
+
+.info-button:hover {
+  background-color: rgba(58,128,136,255);
+  border-color: rgba(58,128,136,255);
+}
+
+.info-button:hover span {
+  color: white;
+}
+
+.send-form-button {
+  border: white 1px solid;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 70px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color .4s, color .4s;
+}
+
+.send-form-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
 
 /* mesh IDs */
 
@@ -1496,7 +1548,7 @@ body.device-mobile-optimized{
 
 [data-mesh-id=SITE-HEADER-gridContainer]>[id="header-00"] {
   position: relative;
-  margin: 20px 0px 20px calc((100% - 980px) * 0.5);
+  margin: 10px 0px 0px calc((100% - 980px)* 0.5);
   left: 0px;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
@@ -3407,7 +3459,7 @@ body:not(.responsive) .menu-toggle{
   cursor: pointer !important;
   border-radius: var(--corvid-border-radius, var(--rd, 0));
   bottom: 0;
-  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+  box-shadow: var(--shd, 0 1px 4px rgba(16, 11, 11, 0.6));
   left: 0;
   position: absolute;
   right: 0;
@@ -3428,7 +3480,7 @@ body:not(.responsive) .menu-toggle{
   font: var(--fnt, var(--font_5));
   margin: 0;
   position: relative;
-  transition: var(--trans2, color .4s ease 0s);
+  transition: color .4s;
   white-space: nowrap;
 }
 
