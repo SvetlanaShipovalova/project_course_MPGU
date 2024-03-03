@@ -18,4 +18,42 @@ window.onload = function () {
     document.querySelector('.app01').style.minWidth = "980px";
     document.querySelector('.app02').style.minWidth = "980px";
     document.querySelector('#intro-00').style.minWidth = "980px";
+
+    document.addEventListener('scroll', function () {
+        const top = document.querySelector('#intro');
+        const app = document.querySelector('#app');
+        const story = document.querySelector('#story');
+        const topTag = document.querySelector('.top-link');
+        const appTag = document.querySelector('.app-link');
+        const storyTag = document.querySelector('.story-link');
+        const elements = [top, app, story];
+        const links = [topTag, appTag, storyTag];
+
+        elements.forEach((el, i) => {
+            isInViewport(el) ? links[i].setAttribute('data-state', 'selected') : links[i].removeAttribute('data-state', 'selected')
+        })
+        
+    });
 }
+
+
+function isInViewport(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+  
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+  
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+}
+
