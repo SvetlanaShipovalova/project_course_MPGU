@@ -11,11 +11,11 @@
 	$subject = "Заявка c сайта";
 
 	
-	$msg=    
-    "Имя: $name 
-    Фамилия: $surname 
-    Почта: $email 
-    Текст: $text"; 	
+	$msg= "Спасибо за обратную связь! Ваше мнение для нас очень важно.
+Имя: $name
+Фамилия: $surname
+Почта: $email
+Текст: $text"; 	
 	mail($to, $subject, $msg, "From: $from ");
 
 ?>
