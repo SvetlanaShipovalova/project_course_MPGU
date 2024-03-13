@@ -9,9 +9,8 @@
 	$time = date ("h:i");
 	$from = $email;
 	$subject = "Заявка c сайта";
-
 	
-	$msg= "Спасибо за обратную связь! Ваше мнение для нас очень важно.
+	$msg= "Спасибо за обратную связь. Ваше мнение для нас очень важно.
 Имя: $name
 Фамилия: $surname
 Почта: $email
@@ -19,4 +18,4 @@
 	mail($to, $subject, $msg, "From: $from ");
 
 ?>
-<p style ="text-align:center;">Привет, форма отправлена</p>
+<p style ="text-align:center;">Привет, форма отправлена</p> 
