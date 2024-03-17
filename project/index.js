@@ -8,12 +8,29 @@ window.onload = function () {
     || navigator.userAgent.match(/iPod/i)
     || navigator.userAgent.match(/BlackBerry/i)
     || navigator.userAgent.match(/Windows Phone/i)){
-        window.location.assign("index-mobile.html");
-        // viewport.setAttribute('content', 'width=320, user-scalable=0');
-        // body.classList.add('device-mobile-optimized');
+        // window.location.assign("index-mobile.html");
+        viewport.setAttribute('content', 'width=320, user-scalable=0');
+        body.classList.add('device-mobile-optimized');
+        
+        const moveAppPicture = () => {
+            const elementToMove = document.querySelector('#app-02-20');
+            const newParentElement = document.querySelector('.app-move');
+            const siblingElement = newParentElement.querySelector('#app-02-10');
+            newParentElement.insertBefore(elementToMove, siblingElement);
+        }
+        moveAppPicture();
     }
     else {
         viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+        
+        const moveEl = (elToMove, parent, sblEl) => {
+            const elementToMove = document.querySelector(`${elToMove}`);
+            const newParentElement = document.querySelector(`${parent}`);
+            const siblingElement = newParentElement.querySelector(`${sblEl}`);
+            newParentElement.insertBefore(elementToMove, siblingElement);
+        }
+        moveEl('#app-02-10', '.app-move', '#app-02-20');
+        moveEl('#footer-01-14', '#footer-01', '#footer-01-13');
         // document.querySelector('#SITE-HEADER').style.position = "fixed";
         // document.querySelector('#header-00').style.minWidth = "980px";
         // document.querySelector('#footer').style.minWidth = "980px";
