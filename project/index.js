@@ -1,4 +1,6 @@
 window.onload = function () {
+    let viewport = document.querySelector('meta[name=viewport]');
+    let body = document.querySelector('body');
     if (navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/webOS/i)
     || navigator.userAgent.match(/iPhone/i)
@@ -7,17 +9,22 @@ window.onload = function () {
     || navigator.userAgent.match(/BlackBerry/i)
     || navigator.userAgent.match(/Windows Phone/i)){
         window.location.assign("index-mobile.html");
+        // viewport.setAttribute('content', 'width=320, user-scalable=0');
+        // body.classList.add('device-mobile-optimized');
     }
-    document.querySelector('#SITE-HEADER').style.position = "fixed";
-    document.querySelector('#header-00').style.minWidth = "980px";
-    document.querySelector('#footer').style.minWidth = "980px";
-    document.querySelector('#contact').style.minWidth = "980px";
-    document.querySelector('#contact-00').style.minWidth = "980px";
-    document.querySelector('#info-00').style.minWidth = "980px";
-    document.querySelector('#info-00-02').style.minWidth = "980px";
-    document.querySelector('.app01').style.minWidth = "980px";
-    document.querySelector('.app02').style.minWidth = "980px";
-    document.querySelector('#intro-00').style.minWidth = "980px";
+    else {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+        // document.querySelector('#SITE-HEADER').style.position = "fixed";
+        // document.querySelector('#header-00').style.minWidth = "980px";
+        // document.querySelector('#footer').style.minWidth = "980px";
+        // document.querySelector('#contact').style.minWidth = "980px";
+        // document.querySelector('#contact-00').style.minWidth = "980px";
+        // document.querySelector('#info-00').style.minWidth = "980px";
+        // document.querySelector('#info-00-02').style.minWidth = "980px";
+        // document.querySelector('.app01').style.minWidth = "980px";
+        // document.querySelector('.app02').style.minWidth = "980px";
+        // document.querySelector('#intro-00').style.minWidth = "980px";
+    }
 
     document.addEventListener('scroll', function () {
         const top = document.querySelector('#intro');
