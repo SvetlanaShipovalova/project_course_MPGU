@@ -164,25 +164,6 @@
     height: 100vh;
   }
 
-  #header-02 {
-    animation: 1s alternate slideOut;
-  }
-
-  @keyframes slideOut {
-    from {
-      height: 0;
-    }
-
-    to {
-      height: 100vh;
-    }
-  }
-
-  .closed-menu {
-    display: none;
-    transition: display 0.5s;
-  }
-
   #header-03 {
     display: block;
     width: 50px;
@@ -240,12 +221,6 @@
     min-width: 100%;
     width: 320px;
   }
-  /* 
-  #info-00-02,
-  #intro-00-02,
-  #story-00-02 {
-    min-width: 0;
-  } */
 
   #info-00,
   #info-00-02,
@@ -550,7 +525,26 @@
   }
 
   /* Classes */
+  .story {
+    padding: 0;
+  }
 
+  .team {
+    margin-top: 40px;
+  }
+
+  .swiper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .slide-content {
+    margin: 0 50px;
+    height: 100%;
+  }
+
+  .name {
+  }
   /* header */
 
   .menu-container[data-undisplayed="true"] {
@@ -598,22 +592,6 @@
     width: 22px;
   }
 
-  .opened-menu .line-1 {
-    transform: translateY(10px) translateY(-50%) rotate(-45deg);
-    -ms-transform: translateY(10px) translateY(-50%) rotate(-45deg);
-    -webkit-transform: translateY(10px) translateY(-50%) rotate(-45deg);
-  }
-
-  .opened-menu .line-2 {
-    opacity: 0;
-  }
-
-  .opened-menu .line-3 {
-    transform: translateY(-10px) translateY(50%) rotate(45deg);
-    -ms-transform: translateY(-10px) translateY(50%) rotate(45deg);
-    -webkit-transform: translateY(-10px) translateY(50%) rotate(45deg);
-  }
-
   .menu-toggle-line {
     background-color: rgba(
       var(--lineColor, var(--color_11)),
@@ -623,7 +601,6 @@
     height: 2px;
     left: 0;
     position: absolute;
-    transition: all 0.25s ease-in-out;
     width: 100%;
   }
 
@@ -649,9 +626,6 @@
   .list-container {
     display: flex;
     flex-direction: column;
-  }
-
-  .list-word {
   }
 
   .list-word .menu-container-03 {
@@ -743,6 +717,141 @@
 
   .link-padding div {
     text-align: center;
+  }
+
+  /* Animations */
+  #header-02 {
+    animation: 500ms slideOut;
+  }
+
+  #header-02[closed] {
+    display: none;
+  }
+
+  #header-02[closing] {
+    display: block;
+    pointer-events: none;
+    animation: 500ms slideIn ease-in;
+  }
+
+  @keyframes slideOut {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: 100vh;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      height: 100vh;
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  .menu-toggle-02[opening] .line-1 {
+    animation: 500ms openLine1;
+  }
+
+  .menu-toggle-02[opened] .line-1 {
+    transform: translateY(10px) translateY(-50%) rotate(-45deg);
+  }
+
+  .menu-toggle-02[closing] .line-1 {
+    animation: 500ms closeLine1;
+  }
+
+  @keyframes openLine1 {
+    from {
+    }
+
+    to {
+      transform: translateY(10px) translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  @keyframes closeLine1 {
+    from {
+      transform: translateY(10px) translateY(-50%) rotate(-45deg);
+    }
+
+    to {
+    }
+  }
+
+  .menu-toggle-02[opening] .line-2 {
+    animation: 500ms fadeOut ease-out;
+  }
+
+  .menu-toggle-02[opened] .line-2 {
+    opacity: 0;
+  }
+
+  .menu-toggle-02[closing] .line-2 {
+    animation: 500ms fadeIn ease-in;
+  }
+
+  .menu-toggle-02[opening] .line-3 {
+    animation: 500ms openLine3;
+  }
+
+  .menu-toggle-02[opened] .line-3 {
+    transform: translateY(-10px) translateY(50%) rotate(45deg);
+  }
+
+  .menu-toggle-02[closing] .line-3 {
+    animation: 500ms closeLine3;
+  }
+
+  @keyframes openLine3 {
+    from {
+    }
+
+    to {
+      transform: translateY(-10px) translateY(50%) rotate(45deg);
+    }
+  }
+
+  @keyframes closeLine3 {
+    from {
+      transform: translateY(-10px) translateY(50%) rotate(45deg);
+    }
+
+    to {
+    }
+  }
+
+  .list-container {
+    animation: 500ms fadeIn ease-in;
+  }
+
+  .list-container[closing] {
+    animation: 500ms fadeOut;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
   }
 
   /* mesh IDs */
