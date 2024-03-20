@@ -12,7 +12,6 @@ window.onload = function () {
     navigator.userAgent.match(/BlackBerry/i) ||
     navigator.userAgent.match(/Windows Phone/i)
   ) {
-    // window.location.assign("index-mobile.html");
     viewport.setAttribute("content", "width=320, user-scalable=0");
     body.classList.add("device-mobile-optimized");
     abEnding.innerHTML = "&nbsp; &nbsp; &nbsp; ab";
@@ -24,10 +23,6 @@ window.onload = function () {
     moveEl("#header-03", ".SITE-HEADER-gridContainer", "#header-00");
     deleteElement("#header-00");
     menuToggle();
-    // if(!window.location.hash) {
-    //     window.location = window.location + '#loaded';
-    //     window.location.reload();
-    // }
   } else {
     viewport.setAttribute("content", "width=device-width, initial-scale=1");
 
@@ -47,10 +42,6 @@ window.onload = function () {
           : links[i].removeAttribute("data-state", "selected");
       });
     });
-    // if(!window.location.hash) {
-    //     window.location = window.location + '#loaded';
-    //     window.location.reload();
-    // }
   }
 };
 
@@ -90,6 +81,7 @@ function menuToggle() {
   const menuButton = document.querySelector("#header-03");
   const listButton = document.querySelectorAll(".list-word");
   const menuLines = document.querySelector(".menu-toggle-02");
+  const listContainer = document.querySelector(".list-container");
   const menu = document.querySelector("#header-02");
   const body = document.querySelector("body");
 
@@ -103,14 +95,34 @@ function menuToggle() {
   });
 
   function toggle() {
-    if (menu.classList.contains("closed-menu")) {
-      menuLines.classList.add("opened-menu");
+    if (menu.hasAttribute("closed")) {
+      menuLines.setAttribute("opening", "");
+      menuLines.addEventListener(
+        "animationend",
+        () => {
+          menuLines.removeAttribute("opening");
+          menuLines.setAttribute("opened", "");
+        },
+        { once: true }
+      );
       body.classList.add("not-scrollable");
-      menu.classList.remove("closed-menu");
+      menu.removeAttribute("closed");
     } else {
+      menu.setAttribute("closing", "");
+      menuLines.setAttribute("closing", "");
+      listContainer.setAttribute("closing", "");
       body.classList.remove("not-scrollable");
-      menu.classList.add("closed-menu");
-      menuLines.classList.remove("opened-menu");
+      menu.addEventListener(
+        "animationend",
+        () => {
+          menu.removeAttribute("closing");
+          menuLines.removeAttribute("closing");
+          listContainer.removeAttribute("closing");
+          menu.setAttribute("closed", "");
+        },
+        { once: true }
+      );
+      menuLines.removeAttribute("opened");
     }
   }
 }

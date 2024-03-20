@@ -1345,7 +1345,7 @@ body.device-mobile-optimized {
 
 /* Mixed Classes */
 
-.SITE-HEADER{
+.SITE-HEADER {
   background-color: var(
     --screenwidth-corvid-background-color,
     rgba(var(--bg, var(--color_11)), var(--alpha-bg, 1))
@@ -2440,6 +2440,7 @@ body.device-mobile-optimized {
   border-radius: 25px;
   background-color: #fff;
 }
+
 .image-content,
 .card-content {
   display: flex;
@@ -2448,10 +2449,16 @@ body.device-mobile-optimized {
   padding: 10px 14px;
   height: auto;
 }
+
+.card-content {
+  gap: 5px;
+}
+
 .image-content {
   position: relative;
   padding: 25px 0;
 }
+
 .overlay {
   position: absolute;
   left: 0;
@@ -2466,14 +2473,20 @@ body.device-mobile-optimized {
   content: "";
   position: absolute;
   right: 0;
-  bottom: -40px;
-  height: 40px;
+  bottom: -20px;
+  height: 20px;
   width: 20px;
   background-color: #5c5bbb;
 }
+
+.overlay::before {
+  bottom: -19px;
+}
+
 .overlay::after {
   border-radius: 0 25px 0 0;
   background-color: #fff;
+  width: 21px;
 }
 .card-image {
   position: relative;
@@ -2490,13 +2503,19 @@ body.device-mobile-optimized {
   border-radius: 50%;
   border: 4px solid #5c5bbb;
 }
-.name {
+.name,
+.profession {
   font-size: 20px;
-  font-weight: 500;
   color: #333;
-  font-weight: bolder;
   font-family: "Helvetica", sans-serif;
+  text-align: center;
 }
+
+.profession {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .description {
   font-size: 16px;
   color: #707070;
