@@ -131,9 +131,16 @@ body:not(.device-mobile-optimized) .mobile {
   --color_63: 255, 255, 255;
   --color_64: 199, 199, 199;
   --color_65: 199, 199, 199;
+<<<<<<< Updated upstream
   --color_66: 255,255,255;
   --font_0: normal normal normal 60px/1.2em Play, sans-serif;
   --font_1: normal normal normal 16px / 1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+=======
+  --color_66: 255, 255, 255;
+  --font_0: normal normal normal 60px/1.2em Jura, sans-serif;
+  --font_1: normal normal normal 16px / 1.4em din-next-w01-light,
+    din-next-w02-light, din-next-w10-light, sans-serif;
+>>>>>>> Stashed changes
   --font_2: bold bold bold 48px/1.4em Jura Bold 700, sans-serif;
   --font_3: normal normal normal 42px/1.4em futura-lt-w01-book, futura-lt-w05-book, sans-serif;
   --font_4: normal normal normal 32px/1.4em futura-lt-w01-book, futura-lt-w05-book, sans-serif;
@@ -1009,7 +1016,7 @@ height: 620px;
 #input_form-05 {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 22px;
   color: #fff;
   margin-bottom: 5px;
   border: none;
@@ -1363,23 +1370,37 @@ body.device-mobile-optimized{
 
 .font_0 {
   font: var(--font_0);
-  color: rgb(var(--color_45));
   letter-spacing: 0em;
+<<<<<<< Updated upstream
   font-family: 'Play', sans-serif;
+=======
+  font-size: clamp(22px, 5vw, 6vh);
+  line-height: 1.4em
+>>>>>>> Stashed changes
 }
 
 .font_1 {
   font: var(--font_1);
-  color: rgb(var(--color_66));
   letter-spacing: 0em;
+<<<<<<< Updated upstream
   font-family: 'DINNextLTPro-Light', sans-serif;
+=======
+  font-family: "Jura", sans-serif;
+  font-size: clamp(12px, 2vw, 3vh);
+>>>>>>> Stashed changes
 }
 
 .font_2 {
   font: var(--font_2);
   color: rgb(var(--color_45));
+  font-size: clamp(20px, 3vw, 4vh);
   letter-spacing: 0em;
+<<<<<<< Updated upstream
   font-family: 'Jura', sans-serif;
+=======
+  line-height: 1em;
+  font-weight: bold;
+>>>>>>> Stashed changes
 }
 
 .font_3 {
@@ -1389,12 +1410,27 @@ body.device-mobile-optimized{
   font-family: 'Noto Sans Mono', sans-serif;
   font-weight: bold;
 }
-
+.font_5 {
+  font: var(--font_0);
+  letter-spacing: 0em;
+  font-size: clamp(12px, 1.5vw, 2.5vh);
+  line-height: 1.4em
+}
+.font_4 {
+  font: var(--font_0);
+  letter-spacing: 0em;
+  font-size: clamp(16px, 5vw, 5vh);
+  line-height: 1.4em
+}
 .font_7 {
   font: var(--font_7);
-  color: rgb(var(--color_15));
+  font-size: clamp(14px, 3vw, 3vh);
   letter-spacing: 0em;
+<<<<<<< Updated upstream
   font-family: 'Futura LT', sans-serif;
+=======
+  font-family: "Jura", sans-serif;
+>>>>>>> Stashed changes
 }
 
 .font_8 {
@@ -1453,9 +1489,8 @@ body.device-mobile-optimized{
   border: white 1px solid;
   border-radius: 5px;
   color: white;
-  padding: 10px 70px;
-  text-align: center;
-  font-size: 16px;
+  padding: 10px 50px;
+  font-size: clamp(14px, 3vw, 3vh);
   cursor: pointer;
   transition: background-color .4s, color .4s;
 }
@@ -1558,7 +1593,7 @@ body.device-mobile-optimized{
 [data-mesh-id=SITE-FOOTER-gridContainer]>[id="contact"] {
   position: relative;
   margin: 0px 0px 31px calc((100% - 980px) * 0.5);
-  left: 0px;
+  right: 0px;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
   align-self: start;
@@ -1730,7 +1765,7 @@ body.device-mobile-optimized{
 
 [data-mesh-id=info-00-gridContainer]>[id="info-blank"] {
   position: relative;
-  margin: 0px 0 10px 0;
+  margin: 0px 0 0px 0;
   left: 0;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: stretch;
@@ -1739,7 +1774,7 @@ body.device-mobile-optimized{
 
 [data-mesh-id=info-00-gridContainer]>[id="info-00-02"] {
   position: relative;
-  margin: 68px 0px 40px calc((100% - 980px) * 0.5);
+  margin: 40px 0px 40px calc((100% - 980px) * 0.5);
   left: 0px;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
@@ -2019,7 +2054,7 @@ body.device-mobile-optimized{
 [data-mesh-id=footer-01]>[id="footer-01-13"] {
   position: relative;
   margin: -6px 0px 3px calc((100% - 490px) * 0);
-  left: 282px;
+  left: 300px;
   grid-area: 2 / 1 / 3 / 2;
   justify-self: start;
   align-self: start;
@@ -2065,7 +2100,7 @@ body.device-mobile-optimized{
 [data-mesh-id=contact-01-gridContainer]>[id="contact-01"] {
   position: relative;
   margin: 54px 0px 10px calc((100% - 490px) * 0);
-  left: -4px;
+  left: -34px;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
   align-self: start;
@@ -2085,8 +2120,13 @@ body.device-mobile-optimized{
   margin: 0px 0px 0px 0;
   left: 0px;
   grid-area: 1 / 1 / 2 / 2;
+<<<<<<< Updated upstream
   justify-self: start;
   align-self: start
+=======
+  justify-self: center;
+  align-self: center;
+>>>>>>> Stashed changes
 }
 
 [data-mesh-id=formContent-gridContainer]>[id="form-01"] {
@@ -2127,11 +2167,9 @@ body.device-mobile-optimized{
 
 [data-mesh-id=formContent-gridContainer]>[id="form-05"] {
   position: relative;
-  margin: 0px 0px 44px 0;
-  left: 18px;
   grid-area: 4 / 1 / 5 / 2;
-  justify-self: start;
-  align-self: start;
+  justify-self: center;
+  align-self: center;
 }
 
 /* MOBILE CSS */
@@ -4509,6 +4547,7 @@ body:not(.responsive) .menu-toggle{
   .swiper-navBtn{
     display: none;
   }
+<<<<<<< Updated upstream
     header{
         margin-left: 25%;
     }
@@ -4521,3 +4560,13 @@ body:not(.responsive) .menu-toggle{
     float: left;
     font-size: 48px;
 }
+=======
+  header {
+    margin-left: 25%;
+  }
+} */
+
+/* MOBILE CSS */
+
+/* Mobile any  */
+>>>>>>> Stashed changes
